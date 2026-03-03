@@ -8,9 +8,12 @@ let points = localStorage.getItem("points")
 let completedOffers = localStorage.getItem("completedOffers") 
     ? JSON.parse(localStorage.getItem("completedOffers")) 
     : [];
-
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
+
+    if(localStorage.getItem("loggedIn") === "true"){
+        show("home");
+    }
 });
 function animatePoints(target){
     let current = parseInt(document.getElementById("points").innerText);
@@ -86,4 +89,8 @@ function login(){
   } else {
     alert("بيانات غير صحيحة ❌");
   }
+}
+function logout(){
+    localStorage.removeItem("loggedIn");
+    show("account");
 }
