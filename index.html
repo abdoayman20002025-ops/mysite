@@ -216,18 +216,7 @@ PayPal
 <button onclick="show('account')">الحساب</button>
 </div>
 
-<script>
-let points=0;
-function earn(){
-points+=50;
-document.getElementById("points").innerText=points;
-}
-
-function show(id){
-document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-}
-</script>
+<script src="scripts/main.js"></script>
 
 </body>
 </html>
