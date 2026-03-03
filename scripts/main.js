@@ -9,7 +9,19 @@ let completedOffers = localStorage.getItem("completedOffers")
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
 });
+function animatePoints(target){
+    let current = parseInt(document.getElementById("points").innerText);
+    let increment = target > current ? 1 : -1;
 
+    let interval = setInterval(function(){
+        current += increment;
+        document.getElementById("points").innerText = current;
+
+        if(current == target){
+            clearInterval(interval);
+        }
+    }, 5);
+}
 function earn(company){
 
     if(completedOffers.includes(company)){
