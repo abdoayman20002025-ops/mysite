@@ -73,3 +73,16 @@ function register(){
 
   alert("تم إنشاء الحساب بنجاح ✅");
 }
+function login(){
+  let username = document.querySelector("#account input[placeholder='اسم المستخدم']").value;
+  let password = document.querySelector("#account input[placeholder='كلمة المرور']").value;
+
+  let savedUser = localStorage.getItem("user");
+  let savedPass = localStorage.getItem("pass");
+
+  if(username === savedUser && password === savedPass){
+    alert("تم تسجيل الدخول بنجاح ✅");
+  } else {
+    alert("بيانات غير صحيحة ❌");
+  }
+}
