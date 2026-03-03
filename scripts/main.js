@@ -8,6 +8,7 @@ let points = localStorage.getItem("points")
 let completedOffers = localStorage.getItem("completedOffers") 
     ? JSON.parse(localStorage.getItem("completedOffers")) 
     : [];
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
 
