@@ -82,6 +82,7 @@ function login(){
 
   if(username === savedUser && password === savedPass){
     alert("تم تسجيل الدخول بنجاح ✅");
+    show("home");
   } else {
     alert("بيانات غير صحيحة ❌");
   }
