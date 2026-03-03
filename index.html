@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tish Rewards</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0f172a;color:white;overflow-x:hidden}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:#111827;
+position:fixed;
+width:100%;
+top:0;
+}
+
+.logo{color:#22d3ee;font-weight:bold}
+.balance{
+background:#22c55e;
+padding:6px 12px;
+border-radius:20px;
+}
+
+/* SECTION */
+.section{
+margin-top:80px;
+padding:15px;
+margin-bottom:80px;
+display:none;
+}
+.active{display:block}
+
+/* CARD */
+.card{
+background:#1e293b;
+padding:15px;
+margin-bottom:15px;
+border-radius:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:0.2s;
+}
+
+.card:active{
+transform:scale(0.96);
+}
+
+.icon{
+width:40px;
+height:40px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+color:white;
+}
+
+.btn{
+background:#38bdf8;
+border:none;
+padding:6px 15px;
+border-radius:20px;
+cursor:pointer;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+/* FOOTER */
+.footer{
+position:fixed;
+bottom:0;
+width:100%;
+background:#111827;
+display:flex;
+justify-content:space-around;
+padding:12px;
+}
+
+.footer button{
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Tish Rewards</div>
+<div class="balance"><span id="points">0</span> نقطة</div>
+</header>
+
+<!-- الرئيسية -->
+<div id="home" class="section active">
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#3b82f6;">P</div>
+PubScale
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#22c55e;">PT</div>
+PlaytimeAds
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#f97316;">L</div>
+Lootably
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#a855f7;">M</div>
+Monlix
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#ef4444;">A</div>
+Adtowall
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#facc15;">O</div>
+Offerify
+</div>
+<button class="btn" onclick="earn()">دخول</button>
+</div>
+
+</div>
+
+<!-- السحب -->
+<div id="withdraw" class="section">
+
+<h2>طرق السحب</h2>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#e60000;">V</div>
+Vodafone Cash
+</div>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#f0b90b;">B</div>
+Binance
+</div>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#16a34a;">C</div>
+Cwallet
+</div>
+</div>
+
+<div class="card">
+<div style="display:flex;gap:10px;align-items:center;">
+<div class="icon" style="background:#003087;">P</div>
+PayPal
+</div>
+</div>
+
+</div>
+
+<!-- الحساب -->
+<div id="account" class="section">
+
+<h2>تسجيل الدخول</h2>
+<input placeholder="اسم المستخدم">
+<input placeholder="كلمة المرور">
+<button class="btn">دخول</button>
+
+<h2 style="margin-top:20px;">إنشاء حساب</h2>
+<input placeholder="اسم المستخدم">
+<input placeholder="كلمة المرور">
+<button class="btn">إنشاء حساب</button>
+
+</div>
+
+<div class="footer">
+<button onclick="show('home')">الرئيسية</button>
+<button onclick="show('withdraw')">السحب</button>
+<button onclick="show('account')">الحساب</button>
+</div>
+
+<script>
+let points=0;
+function earn(){
+points+=50;
+document.getElementById("points").innerText=points;
+}
+
+function show(id){
+document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
