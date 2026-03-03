@@ -1,3 +1,6 @@
+function animatePoints(newPoints){
+  document.getElementById("points").innerText = newPoints;
+}
 let points = localStorage.getItem("points") 
     ? parseInt(localStorage.getItem("points")) 
     : 0;
@@ -35,7 +38,7 @@ function earn(company){
     localStorage.setItem("points", points);
     localStorage.setItem("completedOffers", JSON.stringify(completedOffers));
 
-    document.getElementById("points").innerText = points;
+    animatePoints(points);
 }
 
 function show(id){
