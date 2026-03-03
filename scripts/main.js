@@ -59,3 +59,17 @@ function withdraw(){
 
     alert("تم إرسال طلب السحب بنجاح ✅");
 }
+function register(){
+  let username = document.getElementById("regUser").value;
+  let password = document.getElementById("regPass").value;
+
+  if(username === "" || password === ""){
+    alert("اكتب البيانات كاملة");
+    return;
+  }
+
+  localStorage.setItem("user", username);
+  localStorage.setItem("pass", password);
+
+  alert("تم إنشاء الحساب بنجاح ✅");
+}
