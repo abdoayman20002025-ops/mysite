@@ -30,3 +30,17 @@ function show(id){
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
+function withdraw(){
+
+    if(points < 1000){
+        alert("لازم تجمع 1000 نقطة على الأقل علشان تسحب 💰");
+        return;
+    }
+
+    points -= 1000;
+
+    localStorage.setItem("points", points);
+    document.getElementById("points").innerText = points;
+
+    alert("تم إرسال طلب السحب بنجاح ✅");
+}
