@@ -133,3 +133,24 @@ function logout(){
     localStorage.removeItem("loggedIn");
     show("account");
 }
+let user = localStorage.getItem("user");
+
+if(user){
+let link = window.location.origin + "/?ref=" + user;
+
+let refBox = document.getElementById("refLink");
+
+if(refBox){
+refBox.innerText = link;
+}
+}
+
+function copyRef(){
+
+let link = document.getElementById("refLink").innerText;
+
+navigator.clipboard.writeText(link);
+
+alert("✅ تم نسخ رابط الدعوة");
+
+}
