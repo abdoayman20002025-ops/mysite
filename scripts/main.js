@@ -25,7 +25,19 @@ let completedOffers = localStorage.getItem("completedOffers")
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
+let lastClaim = localStorage.getItem("dailyReward");
 
+let today = new Date().toDateString();
+
+if(lastClaim !== today){
+points += 50;
+localStorage.setItem("points", points);
+localStorage.setItem("dailyReward", today);
+
+animatePoints(points);
+
+alert("🎁 حصلت على مكافأة تسجيل يومي +50 نقطة");
+}
     if(localStorage.getItem("loggedIn") === "true"){
         show("home");
     }
