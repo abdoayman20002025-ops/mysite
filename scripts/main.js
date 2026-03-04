@@ -146,7 +146,15 @@ function logout(){
     show("account");
 }
 let user = localStorage.getItem("user");
+let invites = localStorage.getItem("invites")
+? parseInt(localStorage.getItem("invites"))
+: 0;
 
+let inviteBox = document.getElementById("inviteCount");
+
+if(inviteBox){
+inviteBox.innerText = invites;
+}
 if(user){
 let link = window.location.origin + "/?ref=" + user;
 
