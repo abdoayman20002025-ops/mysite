@@ -25,7 +25,6 @@ let completedOffers = localStorage.getItem("completedOffers")
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
-}
 let lastClaim = localStorage.getItem("dailyReward");
 
 let today = new Date().toDateString();
