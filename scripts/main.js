@@ -145,3 +145,12 @@ let ref = urlParams.get("ref");
 if(ref){
 localStorage.setItem("referrer", ref);
 }
+function copyRef(){
+
+let link = document.getElementById("refLink").innerText;
+
+navigator.clipboard.writeText(link);
+
+alert("✅ تم نسخ رابط الدعوة");
+
+}
