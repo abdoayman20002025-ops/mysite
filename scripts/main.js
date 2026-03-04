@@ -110,15 +110,11 @@ let referrer = localStorage.getItem("referrer");
 
 if(referrer){
 
-let refPoints = localStorage.getItem("refPoints_"+referrer)
-? parseInt(localStorage.getItem("refPoints_"+referrer))
-: 0;
+points += 200;
 
-refPoints += 200;
-
-localStorage.setItem("refPoints_"+referrer, refPoints);
-
-alert("🎉 سجلت عن طريق دعوة من " + referrer);
+localStorage.setItem("points", points);
+document.getElementById("points").innerText = points;
+alert("🎉 حصلت على 200 نقطة من رابط الدعوة");
 
 }
   alert("تم إنشاء الحساب بنجاح ✅");
