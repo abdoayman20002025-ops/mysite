@@ -130,6 +130,13 @@ points += 200;
 
 localStorage.setItem("points", points);
 document.getElementById("points").innerText = points;
+let invites = localStorage.getItem("invites")
+? parseInt(localStorage.getItem("invites"))
+: 0;
+
+invites++;
+
+localStorage.setItem("invites", invites);    
 alert("🎉 حصلت على 200 نقطة من رابط الدعوة");
 
 }
