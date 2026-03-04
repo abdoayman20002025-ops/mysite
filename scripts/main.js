@@ -41,6 +41,15 @@ let ref = urlParams.get("ref");
 
 if(ref){
 localStorage.setItem("referrer", ref);
+
+let invites = localStorage.getItem("invites")
+? parseInt(localStorage.getItem("invites"))
+: 0;
+
+invites++;
+
+localStorage.setItem("invites", invites);
+
 }
 
 alert("🎁 حصلت على مكافأة تسجيل يومي +50 نقطة");
