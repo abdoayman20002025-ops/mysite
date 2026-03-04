@@ -52,15 +52,6 @@ localStorage.setItem("invites", invites);
 
 }
 
-let invites = localStorage.getItem("invites")
-? parseInt(localStorage.getItem("invites"))
-: 0;
-
-invites++;
-
-localStorage.setItem("invites", invites);
-
-}
 
 alert("🎁 حصلت على مكافأة تسجيل يومي +50 نقطة");
 }
