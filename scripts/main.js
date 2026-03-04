@@ -25,11 +25,6 @@ let completedOffers = localStorage.getItem("completedOffers")
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("points").innerText = points;
-    let user = localStorage.getItem("user");
-
-if(user){
-let link = window.location.origin + "/?ref=" + user;
-document.getElementById("refLink").innerText = link;
 }
 let lastClaim = localStorage.getItem("dailyReward");
 
@@ -137,20 +132,4 @@ function login(){
 function logout(){
     localStorage.removeItem("loggedIn");
     show("account");
-}
-let urlParams = new URLSearchParams(window.location.search);
-
-let ref = urlParams.get("ref");
-
-if(ref){
-localStorage.setItem("referrer", ref);
-}
-function copyRef(){
-
-let link = document.getElementById("refLink").innerText;
-
-navigator.clipboard.writeText(link);
-
-alert("✅ تم نسخ رابط الدعوة");
-
 }
