@@ -92,6 +92,7 @@ function login(){
 
   if(username === savedUser && password === savedPass){
     alert("تم تسجيل الدخول بنجاح ✅");
+    localStorage.setItem("loggedIn","true");
     show("home");
   } else {
     alert("بيانات غير صحيحة ❌");
