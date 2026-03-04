@@ -35,7 +35,8 @@ points += 50;
 localStorage.setItem("points", points);
 localStorage.setItem("dailyReward", today);
 
-animatePoints(points);let urlParams = new URLSearchParams(window.location.search);
+animatePoints(points);
+let urlParams = new URLSearchParams(window.location.search);    
 let ref = urlParams.get("ref");
 
 if(ref){
