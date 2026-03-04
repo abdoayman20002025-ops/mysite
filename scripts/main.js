@@ -1,5 +1,19 @@
-function animatePoints(newPoints){
-  document.getElementById("points").innerText = newPoints;
+function animatePoints(target){
+let current = parseInt(document.getElementById("points").innerText) || 0;
+
+let increment = target > current ? 1 : -1;
+
+let interval = setInterval(function(){
+
+current += increment;
+
+document.getElementById("points").innerText = current;
+
+if(current == target){
+clearInterval(interval);
+}
+
+}, 5);
 }
 let points = localStorage.getItem("points") 
     ? parseInt(localStorage.getItem("points")) 
