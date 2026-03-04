@@ -46,6 +46,12 @@ function earn(company){
 }
 
 function show(id){
+
+    if(id === "home" && localStorage.getItem("loggedIn") !== "true"){
+        alert("لازم تسجل دخول الأول");
+        id = "account";
+    }
+
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
