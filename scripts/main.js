@@ -109,8 +109,18 @@ function register(){
 let referrer = localStorage.getItem("referrer");
 
 if(referrer){
+
+let refPoints = localStorage.getItem("refPoints_"+referrer)
+? parseInt(localStorage.getItem("refPoints_"+referrer))
+: 0;
+
+refPoints += 200;
+
+localStorage.setItem("refPoints_"+referrer, refPoints);
+
 alert("🎉 سجلت عن طريق دعوة من " + referrer);
-    }
+
+}
   alert("تم إنشاء الحساب بنجاح ✅");
 }
 function login(){
