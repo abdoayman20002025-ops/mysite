@@ -106,7 +106,11 @@ function register(){
 
   localStorage.setItem("user", username);
   localStorage.setItem("pass", password);
+let referrer = localStorage.getItem("referrer");
 
+if(referrer){
+alert("🎉 سجلت عن طريق دعوة من " + referrer);
+    }
   alert("تم إنشاء الحساب بنجاح ✅");
 }
 function login(){
@@ -127,4 +131,11 @@ function login(){
 function logout(){
     localStorage.removeItem("loggedIn");
     show("account");
+}
+let urlParams = new URLSearchParams(window.location.search);
+
+let ref = urlParams.get("ref");
+
+if(ref){
+localStorage.setItem("referrer", ref);
 }
